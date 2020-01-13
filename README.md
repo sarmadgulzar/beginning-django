@@ -97,3 +97,122 @@ Later on, we'll see many more things that we can do using ```manage.py```.
 This empty file is just there to treat ```myproject``` folder as a *module*.
 
 ### ```myproject/settings.py```
+This file contains settings for the Django project. A few important ones are ```DEBUG```, ```INSTALLED_APPS```, ```DATABASES``` etc. We'll discuss them in detail later.
+
+### ```myproject/urls.py```
+These are the routes for our web applications. Only urls defined inside this file will be accessible.
+
+### ```myproject/asgi.py``` and ```myproject/wsgi.py```
+These files are used when we deploy our application to the web server on cloud so no need to worry about them just yet.
+
+## Creating  a Hello World page:
+Now that you have basic understanding of how Django works, let's create a simple application that prints "Hello World" on our home page.
+
+Open the ```myproject/urls.py```, it should look similar to this:
+
+```python
+from django.contrib import admin
+from django.urls import path
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+]
+```
+
+Let's add a few things, so it looks like this:
+
+```python
+from django.contrib import admin
+from django.urls import path
+from django.http import HttpResponse # new line
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', lambda request: HttpResponse("Hello World")), # new line
+]
+```
+
+Now when you go back to the browser, you'll see this page:
+
+![Hello World Page](https://github.com/sarmadgulzar/beginning-django/raw/master/images/02.png)
+
+That way easy, no?
+
+Okay, that ```lambda``` expression looks weird. Let's create a separate file called ```views.py``` to contain our views.
+
+Now our directory structure will look like this:
+- myproject/
+  - ```__init__.py```
+  - ```asgi.py```
+  - ```settings.py```
+  - ```urls.py```
+  - ```views.py```
+  - ```wsgi.py```
+- ```manage.py```
+
+Now update the ```views.py``` file so it looks like this:
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello World")
+
+```
+
+and ```urls.py``` will look like this:
+
+```python
+from django.contrib import admin
+from django.urls import path
+
+from .views import index
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index),
+]
+
+```
+
+Now go back to the browser and refresh the page. You'll see the same results. But now our code is much cleaner, isn't?
+
+To give you about how *urls* work in Django. Change ```views.py``` as follows:
+
+```python
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("Hello World")
+
+# new lines
+def bye(request):
+    return HttpResponse("Goodbye World")
+
+```
+
+and ```urls.py```:
+
+```python
+from django.contrib import admin
+from django.urls import path
+
+from .views import index, bye # updated line
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', index),
+    path('', bye), # new line
+]
+
+```
+
+Now go back to the browser and type http://127.0.0.1:8000/bye/ in the url box and hit enter.
+
+You'll see something like this:
+
+![Goodbye World Page](https://github.com/sarmadgulzar/beginning-django/raw/master/images/03.png)
+
+Now you'll start to feel this pattern that how urls defined in ```urls.py``` are mapped to the functions in ```views.py```.
+
+Well that concludes our introduction to Django. Stay tuned for the next part and until then, Happy Pythoning :heart:.
