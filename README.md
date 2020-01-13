@@ -45,12 +45,12 @@ $ django-admin startproject myproject .
 
 The directory structure should look like this:
 - myproject/
-  - __ init __.py
-  - asgi.py
-  - settings.py
-  - urls.py
-  - wsgi.py
-- manage.py
+  - ```__init__.py```
+  - ```asgi.py```
+  - ```settings.py```
+  - ```urls.py```
+  - ```wsgi.py```
+- ```manage.py```
   
 If you feel confused after seeing so many files, please don't. I understand that starting with Django can feel somewhat tedious, but I promise it all will make sense later.
 
@@ -82,3 +82,18 @@ You will see a page like this:
 
 ![Django Welcome Screen](https://github.com/sarmadgulzar/beginning-django/raw/master/images/01.png)
 
+Great work so far. Now, let me briefly explain the files in ```myproject``` folder and ```manage.py``` file.
+
+## ```manage.py```
+Just like ```django-admin```, it is a command line tool to do different things like, for example, starting a server we just did above using:
+
+```
+$ python manage.py runserver
+```
+
+Later on, we'll see many more things that we can do using ```manage.py```.
+
+## ```myproject/__init__.py```
+This empty file is just there to treat ```myproject``` folder as a *module*.
+
+## ```myproject/settings.py```
