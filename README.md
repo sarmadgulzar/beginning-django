@@ -202,7 +202,7 @@ from .views import index, bye # updated line
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
-    path('', bye), # new line
+    path('bye/', bye), # new line
 ]
 
 ```
