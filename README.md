@@ -28,8 +28,10 @@ $ pip install django
 
 If everything goes fine, you should be able to run the following commands to verify your Django installation.
 
-```python
+```
 $ python
+```
+```python
 >>> import django
 >>> django.__version__
 '3.0.2'
@@ -77,4 +79,6 @@ Quit the server with CTRL-BREAK.
 Now open your favorite browser and go to the following url: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 You will see a page like this:
+
+![Django Welcome Screen](https://github.com/sarmadgulzar/beginning-django/raw/master/images/01.png)
 
