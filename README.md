@@ -2,15 +2,15 @@
 
 ## Introduction:
 
-[Django](http://djangoproject.com) is a web framework written in Python. It is a high-level framework that saves you the hassle of low-level web development so that you can focus on what really matters instead of reinventig the wheel. On Django's website, they call it:
+[Django](http://djangoproject.com) is a web framework written in Python. It is a high-level framework that saves you the hassle of low-level web development so that you can focus on what really matters instead of reinventing the wheel. On Django's website, they call it:
 > *The web framework for perfectionists with deadlines.*
 
-And that really is the case becase Django makes it super easy to create backend of your web application very quickly. Python has other frameworks like [Flask](https://www.palletsprojects.com/p/flask/), [Tornado](https://www.tornadoweb.org/en/stable/) etc. but Django has gained huge amount of popularity. A few key features of Django are as follows:
+And that really is the case because Django makes it super easy to create the backend of your web application very quickly. Python has other frameworks like [Flask](https://www.palletsprojects.com/p/flask/), [Tornado](https://www.tornadoweb.org/en/stable/), etc. but Django has gained a huge amount of popularity. A few key features of Django are as follows:
 
 - Quick prototyping
-- Builtin [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping) (Object Relational Mapper)
+- Built-in [ORM](https://en.wikipedia.org/wiki/Object-relational_mapping) (Object Relational Mapper)
 - A beautiful admin panel, out of the box
-- Builtin authentication and authorization
+- Built-in authentication and authorization
 - Powerful web forms
 
 and many more!
@@ -19,7 +19,7 @@ Now its time to install Django on your computer.
 
 ## Installation:
 
-I'll assume that you have [Python](https://www.python.org/) and [pip](https://pypi.org/project/pip/) installed on your system and they are added to your PATH variable. Latest version of Django is `3.0.2` at the time of writing this tutorial and that's the one we are going to use.
+I'll assume that you have [Python](https://www.python.org/) and [pip](https://pypi.org/project/pip/) installed on your system and they are added to your PATH variable. The latest version of Django is `3.0.2` at the time of writing this tutorial and that's the one we are going to use.
 
 To install Django, write this command in your terminal/prompt:
 ```
@@ -37,7 +37,7 @@ $ python
 '3.0.2'
 ```
 
-Fanstastic work installing Django on your computer. Now let's go ahead and create a website using ```django-admin```. It is basically a command-line utility used to create *django projects* and to do few other things. You don't have to worry too much about this as we'll come back to this later. For now, just run the following command in terminal/prompt:
+Fantastic work installing Django on your computer. Now let's go ahead and create a website using ```django-admin```. It is basically a command-line utility used to create *django projects* and to do few other things. You don't have to worry too much about this as we'll come back to this later. For now, just run the following command in terminal/prompt:
 
 ```
 $ django-admin startproject myproject .
@@ -76,7 +76,7 @@ Starting development server at http://127.0.0.1:8000/
 Quit the server with CTRL-BREAK.
 ```
 
-Now open your favorite browser and go to the following url: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Now open your favorite browser and go to the following URL: [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 You will see a page like this:
 
@@ -85,7 +85,7 @@ You will see a page like this:
 Great work so far. Now, let me briefly explain the files in ```myproject``` folder and ```manage.py``` file.
 
 ### ```manage.py```
-Just like ```django-admin```, it is a command line tool to do different things like, for example, starting a server we just did above using:
+Just like ```django-admin```, it is a command-line tool to do different things like, for example, starting a server we just did above using:
 
 ```
 $ python manage.py runserver
@@ -100,13 +100,13 @@ This empty file is just there to treat ```myproject``` folder as a *module*.
 This file contains settings for the Django project. A few important ones are ```DEBUG```, ```INSTALLED_APPS```, ```DATABASES``` etc. We'll discuss them in detail later.
 
 ### ```myproject/urls.py```
-These are the routes for our web applications. Only urls defined inside this file will be accessible.
+These are the routes for our web applications. Only URLs defined inside this file will be accessible.
 
 ### ```myproject/asgi.py``` and ```myproject/wsgi.py```
-These files are used when we deploy our application to the web server on cloud so no need to worry about them just yet.
+These files are used when we deploy our application to the web server on the cloud so no need to worry about them just yet.
 
 ## Creating  a Hello World page:
-Now that you have basic understanding of how Django works, let's create a simple application that prints ```"Hello World"``` on our home page.
+Now that you have a basic understanding of how Django works, let's create a simple application that prints ```"Hello World"``` on our home page.
 
 Open the ```myproject/urls.py```, it should look similar to this:
 
@@ -177,7 +177,7 @@ urlpatterns = [
 
 Now go back to the browser and refresh the page. You'll see the same results. But now our code is much cleaner, isn't?
 
-To give you about how *urls* work in Django. Change ```views.py``` as follows:
+To give you about how *URLs* work in Django. Change ```views.py``` as follows:
 
 ```python
 from django.http import HttpResponse
@@ -207,12 +207,12 @@ urlpatterns = [
 
 ```
 
-Now go back to the browser and type http://127.0.0.1:8000/bye/ in the url box and hit enter.
+Now go back to the browser and type http://127.0.0.1:8000/bye/ in the URL box and hit enter.
 
 You'll see something like this:
 
 ![Goodbye World Page](https://github.com/sarmadgulzar/beginning-django/raw/master/images/03.png)
 
-Now you'll start to feel this pattern that how urls defined in ```urls.py``` are mapped to the functions in ```views.py```.
+Now you'll start to feel this pattern that how URLs defined in ```urls.py``` are mapped to the functions in ```views.py```.
 
-Well that concludes our introduction to Django. Stay tuned for the next part and until then, Happy Pythoning :heart:
+Well, that concludes our introduction to Django. Stay tuned for the next part and until then, Happy Pythoning :heart:
