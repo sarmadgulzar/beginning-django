@@ -177,7 +177,7 @@ urlpatterns = [
 
 Now go back to the browser and refresh the page. You'll see the same results. But now our code is much cleaner, isn't?
 
-To give you about how *URLs* work in Django. Change ```views.py``` as follows:
+To give you an idea about how *URLs* work in Django. Change ```views.py``` as follows:
 
 ```python
 from django.http import HttpResponse
